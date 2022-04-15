@@ -8,6 +8,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { FollowersComponent } from './components/followers/followers.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserPopulatedComponent } from './components/user-populated/user-populated.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UsersComponent } from './components/users/users.component';
     RepositoriesComponent,
     FollowersComponent,
     UsersComponent,
+    UserPopulatedComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
