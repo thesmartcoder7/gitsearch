@@ -1,0 +1,37 @@
+header {
+  width: 100%;
+  padding: 5% 7% 0 7%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header .github-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .github-logo svg {
+  fill: #009ff6;
+}
+
+header .logo-title {
+  color: #dcdddd;
+  margin-left: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header .logo-title h1 {
+  font-size: 2vw;
+  letter-spacing: 0.15vw;
+}
+
+header .logo-title h1 span {
+  color: #009ff6;
+  text-transform: capitalize;
+  font-size: 1.7vw;
+}
