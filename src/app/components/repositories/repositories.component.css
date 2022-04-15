@@ -1,0 +1,59 @@
+.container {
+  padding: 5% 10%;
+  width: 100%;
+}
+
+.user-info {
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user-profile img {
+  width: 15vw;
+  border-radius: 50%;
+}
+
+.user-meta {
+  padding-left: 5%;
+}
+
+.user-meta .user-handle {
+  color: #dcdddd;
+  font-size: 0.8vw;
+  padding: 1% 0;
+}
+
+.user-meta .full-name {
+  color: #009ff6;
+  font-size: 2vw;
+  font-weight: 500;
+  letter-spacing: 0.1vw;
+}
+
+.user-meta .counts {
+  color: #dcdddd;
+  font-size: 0.8vw;
+  padding: 1% 0;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+
+.user-meta .counts svg {
+  width: 1.5vw;
+  height: 1.5vw;
+  color: #009ff6;
+}
+
+.user-meta a button {
+  padding: 3% 5%;
+  margin-top: 5%;
+  background-color: #009ff6;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.2vw;
+  font-size: 0.8vw;
+}

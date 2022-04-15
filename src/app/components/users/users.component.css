@@ -56,16 +56,22 @@
   text-transform: capitalize;
 }
 
-.search-div button {
+.search-div .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin-top: 5%;
-  padding: 2% 5%;
+}
+.search-div .buttons button {
+  padding: 7% 15%;
   outline: none;
   border: none;
   background-color: #009ff6;
   color: #fff;
-  font-size: 0.8vw;
+  font-size: 0.7vw;
   font-weight: 500;
   letter-spacing: 0.1vw;
   border-radius: 0.2vw;
   cursor: pointer;
+  margin-right: 15%;
 }
