@@ -1,0 +1,139 @@
+.container {
+  padding: 5% 10%;
+  width: 100%;
+}
+
+.user-info,
+.user-important {
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user-profile img {
+  width: 15vw;
+  border-radius: 50%;
+}
+
+.user-meta {
+  padding-left: 5%;
+}
+
+.user-meta .user-handle {
+  color: #dcdddd;
+  font-size: 0.8vw;
+  padding: 1% 0;
+}
+
+.user-meta .full-name {
+  color: #009ff6;
+  font-size: 2vw;
+  font-weight: 500;
+  letter-spacing: 0.08vw;
+}
+
+.user-meta .counts {
+  color: #dcdddd;
+  font-size: 0.8vw;
+  padding: 1% 0;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05vw;
+}
+
+.user-meta .counts svg {
+  width: 1.5vw;
+  height: 1.5vw;
+  color: #009ff6;
+}
+
+.user-meta a button {
+  padding: 3% 5%;
+  margin-top: 5%;
+  background-color: #009ff6;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.2vw;
+  font-size: 0.8vw;
+}
+
+/* - - - repository styling - - - */
+.user-important {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.repositories,
+.forks {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  background-color: #222327;
+  border-radius: 0.5vw;
+  margin-right: 5%;
+  text-transform: capitalize;
+}
+
+.repositories h3,
+.forks h3 {
+  color: #dcdddd;
+}
+
+.repositories p,
+.forks p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  color: #dcdddd;
+  font-size: 0.8vw;
+  margin-top: 5%;
+}
+
+.repositories .repo svg,
+.forks .forked svg {
+  width: 1vw;
+  height: 1vw;
+  margin-right: 5%;
+  color: #009ff6;
+}
+
+.repositories .latest svg,
+.forks .m-forked svg {
+  width: 0.5vw;
+  height: 0.5vw;
+  margin-right: 5%;
+  color: #009ff6;
+}
+
+.repositories .count,
+.repositories .latest,
+.forks .count,
+.forks .highest {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  height: auto;
+}
+
+.repositories .count,
+.forks .count {
+  border-radius: 0.5vw 0 0 0.5vw;
+  height: auto;
+  background-color: #18191d;
+}
+
+.repositories p,
+.forks p {
+  display: flex;
+  align-items: center;
+}
