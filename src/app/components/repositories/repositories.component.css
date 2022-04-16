@@ -1,0 +1,81 @@
+.user-nav {
+  padding: 2% 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo .logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.8vw;
+}
+
+.logo .logo-link img {
+  width: 3vw;
+  border-radius: 50%;
+  margin-right: 10%;
+}
+
+.logo .logo-link span {
+  color: #dcdddd;
+  font-size: 0.8vw;
+  cursor: pointer;
+}
+
+.logo .logo-link span:hover {
+  color: #009ff6;
+}
+
+.repositories {
+  padding: 0 10%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.single {
+  width: 27%;
+  height: 18vw;
+  border-radius: 0.5vw;
+  border: 0.1vw solid #009ff6;
+  padding: 2%;
+  margin: 2.5% 1%;
+}
+
+.single .header {
+  display: flex;
+  align-items: center;
+}
+
+.single .header svg {
+  width: 2vw;
+  height: 2vw;
+  color: #009ff6;
+  margin-right: 5%;
+}
+
+.single .header a,
+.single .footer a {
+  text-decoration: none;
+  color: #009ff6;
+  font-size: 0.8vw;
+  letter-spacing: 0.05vw;
+}
+
+.single .header a:hover,
+.single .footer a:hover {
+  color: #6bcbff;
+}
+
+.single .description p {
+  color: #dcdddd;
+  padding: 2% 0;
+  font-size: 0.8vw;
+  letter-spacing: 0.05vw;
+  line-height: 1.5vw;
+}
