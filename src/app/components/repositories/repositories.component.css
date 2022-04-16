@@ -40,7 +40,7 @@
 
 .single {
   width: 27%;
-  height: 18vw;
+  height: 20vw;
   border-radius: 0.5vw;
   border: 0.1vw solid #009ff6;
   padding: 2%;
@@ -70,6 +70,12 @@
 .single .header a:hover,
 .single .footer a:hover {
   color: #6bcbff;
+}
+
+.single .description .title {
+  color: #009ff6;
+  margin-top: 3%;
+  font-size: 1vw;
 }
 
 .single .description p {
