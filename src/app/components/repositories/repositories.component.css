@@ -51,7 +51,6 @@
   display: flex;
   align-items: center;
 }
-
 .single .header svg {
   width: 2vw;
   height: 2vw;
@@ -59,23 +58,8 @@
   margin-right: 5%;
 }
 
-.single .header a,
-.single .footer a {
-  text-decoration: none;
+.single .header .title {
   color: #009ff6;
-  font-size: 0.8vw;
-  letter-spacing: 0.05vw;
-}
-
-.single .header a:hover,
-.single .footer a:hover {
-  color: #6bcbff;
-}
-
-.single .description .title {
-  color: #009ff6;
-  margin-top: 3%;
-  font-size: 1vw;
 }
 
 .single .description p {
@@ -84,6 +68,24 @@
   font-size: 0.8vw;
   letter-spacing: 0.05vw;
   line-height: 1.5vw;
+}
+
+.single .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.single .footer a {
+  text-decoration: none;
+  color: #009ff6;
+  font-size: 0.8vw;
+  letter-spacing: 0.05vw;
+  font-weight: 500;
+}
+
+.single .footer a:hover {
+  color: #6bcbff;
 }
 
 .more {
