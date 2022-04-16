@@ -79,3 +79,24 @@
   letter-spacing: 0.05vw;
   line-height: 1.5vw;
 }
+
+.more {
+  width: 100%;
+  padding: 2% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more a {
+  text-decoration: none;
+  text-align: center;
+  background-color: #009ff6;
+  color: #dcdddd;
+  border: none;
+  border-radius: 0.2vw;
+  outline: none;
+  padding: 1% 2%;
+  font-size: 0.8vw;
+  font-weight: 500;
+}
