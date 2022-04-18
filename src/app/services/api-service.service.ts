@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from '../classes/user';
 import { Repository } from '../classes/repository';
-import { Usersearch } from '../classes/usersearch';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +10,7 @@ import { Usersearch } from '../classes/usersearch';
 export class ApiServiceService {
   user!: any;
   users!: object[];
+  userRepositories!: Repository[];
   repositories!: object[];
 
   constructor(private http: HttpClient) {}
@@ -22,7 +22,6 @@ export class ApiServiceService {
         .subscribe({
           next: (res: any) => {
             this.users = res.items;
-            // console.log(res.items[0].avatar_url);
             resolve();
           },
           error: (error: any) => {
@@ -36,7 +35,7 @@ export class ApiServiceService {
     return promise;
   }
 
-  //global repository search\
+  //global repository search
   globalRepositorySearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       this.http
@@ -59,17 +58,34 @@ export class ApiServiceService {
 
   //single user search
   userSearch(userInput: string) {
-    interface ApiResponse {
-      name: string;
-      login: string;
-    }
     let promise = new Promise<void>((resolve, reject) => {
       return this.http
-        .get<ApiResponse>(`${environment.userSearch}${userInput}`)
+        .get<User>(`${environment.userSearch}${userInput}`)
         .subscribe({
-          next: (res: any) => {
+          next: (res: User) => {
             this.user = res;
-            console.log(this.user);
+            resolve();
+          },
+          error: (error: any) => {
+            reject(error);
+          },
+          complete: () => {
+            console.log('complete');
+          },
+        });
+    });
+    return promise;
+  }
+
+  //single repository search
+  repositorySearch(userInput: string) {
+    let promise = new Promise<void>((resolve, reject) => {
+      return this.http
+        .get<Repository[]>(`${environment.userSearch}${userInput}/repos`)
+        .subscribe({
+          next: (res: Repository[]) => {
+            this.userRepositories = res;
+            console.log(this.userRepositories);
             resolve();
           },
           error: (error: any) => {

@@ -9,11 +9,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-populated.component.css'],
 })
 export class UserPopulatedComponent implements OnInit {
-  currentUser!: any;
+  currentUser!: User;
   user!: string;
+  repositories!: any[];
   constructor(
     private apiCall: ApiServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private otherRoute: Router
   ) {}
 
   ngOnInit(): void {
@@ -21,6 +23,26 @@ export class UserPopulatedComponent implements OnInit {
       this.user = params.data;
     });
     this.getUserDetails(this.user);
+    this.getRepositories(this.user);
+  }
+
+  goToRepositories(user: User) {
+    this.otherRoute.navigate(['/repository'], {
+      queryParams: { data: user.login },
+    });
+  }
+
+  getRepositories(username: string) {
+    this.apiCall.repositorySearch(username).then(
+      (success) => {
+        this.repositories = this.apiCall.userRepositories;
+        console.log(this.repositories);
+      },
+      (error) => {
+        alert('User not found');
+        console.log(error);
+      }
+    );
   }
 
   getUserDetails(username: string) {
@@ -35,7 +57,6 @@ export class UserPopulatedComponent implements OnInit {
           this.apiCall.user.avatar_url,
           this.apiCall.user.public_repos
         );
-        console.log(typeof this.currentUser.membership);
       },
       (error) => {
         alert('User not found');

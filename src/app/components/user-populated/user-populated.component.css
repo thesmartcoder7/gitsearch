@@ -84,6 +84,12 @@
 .repositories h3,
 .forks h3 {
   color: #dcdddd;
+  cursor: pointer;
+}
+
+.repositories h3:hover,
+.forks h3:hover {
+  color: #009ff6;
 }
 
 .repositories p,
