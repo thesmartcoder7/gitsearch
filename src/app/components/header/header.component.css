@@ -15,6 +15,7 @@ header .github-logo {
 
 header .github-logo svg {
   fill: #009ff6;
+  cursor: pointer;
 }
 
 header .logo-title {
@@ -23,15 +24,18 @@ header .logo-title {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 header .logo-title h1 {
   font-size: 2vw;
   letter-spacing: 0.15vw;
+  cursor: pointer;
 }
 
 header .logo-title h1 span {
   color: #009ff6;
   text-transform: capitalize;
   font-size: 1.7vw;
+  cursor: pointer;
 }
