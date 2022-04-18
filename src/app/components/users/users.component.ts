@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/classes/user';
-import { Usersearch } from 'src/app/classes/usersearch';
 import { ApiServiceService } from 'src/app/services/api-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -9,15 +8,20 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-  retunedUser!: User;
   globalUserReturn!: any[];
   globalRepoReturn!: any[];
   isUsers: boolean = false;
   isRepositories: boolean = false;
 
-  constructor(private apiCall: ApiServiceService) {}
+  constructor(private apiCall: ApiServiceService, private route: Router) {}
 
   ngOnInit(): void {}
+
+  goToUser(index: number) {
+    this.route.navigate(['/user'], {
+      queryParams: { data: this.globalUserReturn[index].login },
+    });
+  }
 
   globalRepositorySearch(userInput: string) {
     this.apiCall.globalRepositorySearch(userInput).then(
@@ -25,7 +29,6 @@ export class UsersComponent implements OnInit {
         this.globalRepoReturn = this.apiCall.repositories;
         this.isRepositories = true;
         this.isUsers = false;
-        console.log(this.globalRepoReturn);
       },
       (error) => {
         alert('Repository not found');

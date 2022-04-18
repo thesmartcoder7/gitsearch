@@ -8,12 +8,13 @@
 
   <!-- user profile search -->
   <div class="user-image items" *ngIf="isUsers === true">
-    <div *ngFor="let user of globalUserReturn">
+    <div *ngFor="let user of globalUserReturn; let i = index">
       <div class="user">
         <img
           class="user-profile"
           src="{{ user.avatar_url }}"
           alt="user-profile"
+          (click)="goToUser(i)"
         />
         <br />
         <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ user.login }}</p>
