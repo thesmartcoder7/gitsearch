@@ -10,7 +10,7 @@ import { Repository } from '../classes/repository';
 export class ApiServiceService {
   user!: any;
   users!: object[];
-  userRepositories!: Repository[];
+  userRepositories!: any[];
   repositories!: object[];
 
   constructor(private http: HttpClient) {}
@@ -18,7 +18,7 @@ export class ApiServiceService {
   globalUserSearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get<any>(`${environment.globalUserSearch}${userInput}`)
+        .get<User[]>(`${environment.globalUserSearch}${userInput}`)
         .subscribe({
           next: (res: any) => {
             this.users = res.items;
@@ -78,14 +78,13 @@ export class ApiServiceService {
   }
 
   //single repository search
-  repositorySearch(userInput: string) {
+  userRepositoriesSearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       return this.http
-        .get<Repository[]>(`${environment.userSearch}${userInput}/repos`)
+        .get<any[]>(`${environment.userSearch}${userInput}/repos`)
         .subscribe({
-          next: (res: Repository[]) => {
+          next: (res: any[]) => {
             this.userRepositories = res;
-            console.log(this.userRepositories);
             resolve();
           },
           error: (error: any) => {

@@ -85,6 +85,18 @@
 .forks h3 {
   color: #dcdddd;
   cursor: pointer;
+  font-size: 1vw;
+}
+
+.repositories h3 a,
+.forks h3 a {
+  text-decoration: none;
+  color: #dcdddd;
+}
+
+.repositories h3 a:hover,
+.forks h3 a:hover {
+  color: #009ff6;
 }
 
 .repositories h3:hover,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/classes/user';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Repository } from 'src/app/classes/repository';
 
 @Component({
   selector: 'app-user-populated',
@@ -28,15 +29,14 @@ export class UserPopulatedComponent implements OnInit {
 
   goToRepositories(user: User) {
     this.otherRoute.navigate(['/repository'], {
-      queryParams: { data: user.login },
+      queryParams: { data: this.user },
     });
   }
 
   getRepositories(username: string) {
-    this.apiCall.repositorySearch(username).then(
+    this.apiCall.userRepositoriesSearch(username).then(
       (success) => {
         this.repositories = this.apiCall.userRepositories;
-        console.log(this.repositories);
       },
       (error) => {
         alert('User not found');

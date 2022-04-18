@@ -40,11 +40,16 @@
 
 .single {
   width: 27%;
-  height: 20vw;
+  height: 15vw;
   border-radius: 0.5vw;
   border: 0.1vw solid #009ff6;
   padding: 2%;
   margin: 2.5% 1%;
+  overflow: auto;
+}
+
+.single::-webkit-scrollbar {
+  display: none;
 }
 
 .single .header {
