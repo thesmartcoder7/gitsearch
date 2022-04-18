@@ -23,15 +23,16 @@
 
   <!-- repositories search -->
   <div class="user-image items" *ngIf="isRepositories === true">
-    <div *ngFor="let user of globalUserReturn">
+    <div *ngFor="let repo of globalRepoReturn">
       <div class="user">
         <img
           class="user-profile"
-          src="{{ user.avatar_url }}"
+          src="{{ repo.owner.avatar_url }}"
           alt="user-profile"
         />
         <br />
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ user.login }}</p>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;{{ repo.name }}</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ repo.owner.login }}</p>
       </div>
     </div>
   </div>

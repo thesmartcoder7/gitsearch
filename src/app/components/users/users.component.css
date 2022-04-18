@@ -96,10 +96,19 @@
 }
 
 .items .user img {
-  width: 7.5vw;
+  width: 6.5vw;
   height: auto;
   margin: 0 1vw;
   border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+.items .user h3 {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  color: #009ff6;
+  font-size: 0.8vw;
   cursor: pointer;
 }
 
@@ -110,4 +119,5 @@
   color: #dcdddd;
   font-size: 0.8vw;
   cursor: pointer;
+  text-overflow: clip;
 }

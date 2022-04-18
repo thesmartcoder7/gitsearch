@@ -19,24 +19,12 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getUser(userInput: string) {
-    this.apiCall.userSearch(userInput).then(
-      (success) => {
-        this.retunedUser = this.apiCall.user;
-        console.log(this.retunedUser);
-      },
-      (error) => {
-        alert('User not found');
-        console.log(error);
-      }
-    );
-  }
-
   globalRepositorySearch(userInput: string) {
     this.apiCall.globalRepositorySearch(userInput).then(
       (success) => {
         this.globalRepoReturn = this.apiCall.repositories;
         this.isRepositories = true;
+        this.isUsers = false;
         console.log(this.globalRepoReturn);
       },
       (error) => {
@@ -51,6 +39,7 @@ export class UsersComponent implements OnInit {
       (success) => {
         this.globalUserReturn = this.apiCall.users;
         this.isUsers = true;
+        this.isRepositories = false;
       },
       (error) => {
         alert('User not found');
