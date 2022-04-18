@@ -9,8 +9,9 @@ import { Repository } from '../classes/repository';
 })
 export class ApiServiceService {
   user!: User;
-  constructor(private http: HttpClient) {}
 
+  constructor(private http: HttpClient) {}
+  //global user search
   globalUserSearch(userInput: string) {
     interface ApiResponse {
       name: string;
@@ -26,7 +27,7 @@ export class ApiServiceService {
         .subscribe({
           next: (res: any) => {
             this.user = res.items[0];
-            console.log(this.user);
+            // console.log(this.user);
             resolve();
           },
           error: (error: any) => {
@@ -37,10 +38,31 @@ export class ApiServiceService {
           },
         });
     });
-
     return promise;
   }
-  globalUserSearchReturn() {
-    return this.user;
+
+  //single user search
+  userSearch(userInput: string) {
+    interface ApiResponse {
+      name: string;
+      login: string;
+    }
+    let promise = new Promise<void>((resolve, reject) => {
+      return this.http
+        .get<ApiResponse>(`${environment.userSearch}${userInput}`)
+        .subscribe({
+          next: (res: any) => {
+            this.user = res;
+            resolve();
+          },
+          error: (error: any) => {
+            reject(error);
+          },
+          complete: () => {
+            // console.log('complete');
+          },
+        });
+    });
+    return promise;
   }
 }
