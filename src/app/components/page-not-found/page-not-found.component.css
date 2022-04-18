@@ -1,0 +1,31 @@
+.not-found {
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  color: #009ff6;
+  font-size: 7vw;
+  letter-spacing: 0.5vw;
+}
+
+h3 {
+  color: #dcdddd;
+  font-size: 2vw;
+  letter-spacing: 0.1vw;
+}
+
+button {
+  padding: 1% 3%;
+  margin-top: 3%;
+  background-color: #009ff6;
+  color: #dcdddd;
+  border: none;
+  border-radius: 0.3vw;
+  outline: none;
+  font-size: 0.9vw;
+  cursor: pointer;
+}
