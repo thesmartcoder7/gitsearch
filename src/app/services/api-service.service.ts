@@ -9,7 +9,7 @@ import { Usersearch } from '../classes/usersearch';
   providedIn: 'root',
 })
 export class ApiServiceService {
-  user!: User;
+  user!: any;
   users!: object[];
   repositories!: object[];
 
@@ -69,6 +69,7 @@ export class ApiServiceService {
         .subscribe({
           next: (res: any) => {
             this.user = res;
+            console.log(this.user);
             resolve();
           },
           error: (error: any) => {

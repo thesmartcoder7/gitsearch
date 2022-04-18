@@ -3,7 +3,7 @@ export class User {
     public login: string,
     public name: string,
     public followers: string,
-    public membership: string,
+    public membership: any,
     public url: string,
     public image: string,
     public repos: number
