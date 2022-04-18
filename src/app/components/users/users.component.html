@@ -13,7 +13,7 @@
     </p>
     <input #username type="text" placeholder="enter username or repository" />
     <div class="buttons">
-      <button>user</button>
+      <button (click)="getUser(username.value)">user</button>
       <button>repository</button>
     </div>
   </div>

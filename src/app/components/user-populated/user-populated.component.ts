@@ -12,6 +12,20 @@ export class UserPopulatedComponent implements OnInit {
   constructor(private apiCall: ApiServiceService) {}
 
   ngOnInit(): void {
-    this.apiCall.globalUserSearch('thesmartcoder7');
+    // this.apiCall.globalUserSearch('thesmartcoder7');
+    // this.apiCall.userSearch('thesmartcoder7');
+    this.getUserDetails('thesmartcoder7');
+  }
+
+  getUserDetails(username: string) {
+    this.apiCall.userSearch(username).then(
+      (success) => {
+        console.log(success);
+      },
+      (error) => {
+        alert('User not found');
+        console.log(error);
+      }
+    );
   }
 }
