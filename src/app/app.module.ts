@@ -11,6 +11,7 @@ import { FollowersComponent } from './components/followers/followers.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserPopulatedComponent } from './components/user-populated/user-populated.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DateFormatPipe } from './pipes/date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     UsersComponent,
     UserPopulatedComponent,
     PageNotFoundComponent,
+    DateFormatPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
