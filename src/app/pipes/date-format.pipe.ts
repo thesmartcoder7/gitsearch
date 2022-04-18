@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'dateFormat'
+  name: 'dateFormat',
 })
 export class DateFormatPipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: string): string {
+    let regex: RegExp = /(^[0-9]+)/;
+    let newDate: any = regex.exec(value);
+    console.log(typeof newDate);
+    return newDate[1];
   }
-
 }
