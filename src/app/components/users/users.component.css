@@ -76,3 +76,38 @@
   margin-right: 15%;
   text-transform: capitalize;
 }
+
+.items {
+  height: 50vh;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.items::-webkit-scrollbar {
+  display: none;
+}
+
+.items .user {
+  width: 40%;
+  margin: 10% 5%;
+}
+
+.items .user img {
+  width: 7.5vw;
+  height: auto;
+  margin: 0 1vw;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+.items .user p {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  color: #dcdddd;
+  font-size: 0.8vw;
+  cursor: pointer;
+}

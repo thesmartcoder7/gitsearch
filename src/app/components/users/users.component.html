@@ -1,9 +1,39 @@
 <div class="container">
-  <div class="user-image">
+  <div class="user-image" *ngIf="isRepositories === false && isUsers === false">
     <img
       src="../../../assets/version-control.svg"
       alt="github user version control"
     />
+  </div>
+
+  <!-- user profile search -->
+  <div class="user-image items" *ngIf="isUsers === true">
+    <div *ngFor="let user of globalUserReturn">
+      <div class="user">
+        <img
+          class="user-profile"
+          src="{{ user.avatar_url }}"
+          alt="user-profile"
+        />
+        <br />
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ user.login }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- repositories search -->
+  <div class="user-image items" *ngIf="isRepositories === true">
+    <div *ngFor="let user of globalUserReturn">
+      <div class="user">
+        <img
+          class="user-profile"
+          src="{{ user.avatar_url }}"
+          alt="user-profile"
+        />
+        <br />
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ user.login }}</p>
+      </div>
+    </div>
   </div>
   <div class="search-div">
     <h2>Find a user or a Repo</h2>
@@ -13,9 +43,10 @@
     </p>
     <input #username type="text" placeholder="enter username or repository" />
     <div class="buttons">
-      <!-- <button (click)="getUser(username.value)">user</button> -->
       <button (click)="globalUserSearch(username.value)">user</button>
-      <button>repository</button>
+      <button (click)="globalRepositorySearch(username.value)">
+        repository
+      </button>
     </div>
   </div>
 </div>

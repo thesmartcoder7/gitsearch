@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/classes/user';
+import { Usersearch } from 'src/app/classes/usersearch';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class UsersComponent implements OnInit {
   retunedUser!: User;
-  globalUserReturn!: object[];
+  globalUserReturn!: any[];
+  globalRepoReturn!: any[];
+  isUsers: boolean = false;
+  isRepositories: boolean = false;
 
   constructor(private apiCall: ApiServiceService) {}
 
@@ -28,17 +32,30 @@ export class UsersComponent implements OnInit {
     );
   }
 
+  globalRepositorySearch(userInput: string) {
+    this.apiCall.globalRepositorySearch(userInput).then(
+      (success) => {
+        this.globalRepoReturn = this.apiCall.repositories;
+        this.isRepositories = true;
+        console.log(this.globalRepoReturn);
+      },
+      (error) => {
+        alert('Repository not found');
+        console.log(error);
+      }
+    );
+  }
+
   globalUserSearch(userInput: string) {
-    // this.apiCall.globalUserSearch(userInput).then(
-    //   (success) => {
-    //     this.globalUserReturn = this.apiCall.users;
-    //     console.log(this.globalUserReturn);
-    //   },
-    //   (error) => {
-    //     alert('User not found');
-    //     console.log(error);
-    //   }
-    // );
-    this.apiCall.globalUserSearch(userInput);
+    this.apiCall.globalUserSearch(userInput).then(
+      (success) => {
+        this.globalUserReturn = this.apiCall.users;
+        this.isUsers = true;
+      },
+      (error) => {
+        alert('User not found');
+        console.log(error);
+      }
+    );
   }
 }
