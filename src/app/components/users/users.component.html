@@ -13,7 +13,8 @@
     </p>
     <input #username type="text" placeholder="enter username or repository" />
     <div class="buttons">
-      <button (click)="getUser(username.value)">user</button>
+      <!-- <button (click)="getUser(username.value)">user</button> -->
+      <button (click)="globalUserSearch(username.value)">user</button>
       <button>repository</button>
     </div>
   </div>

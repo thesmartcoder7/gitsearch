@@ -9,6 +9,7 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class UsersComponent implements OnInit {
   retunedUser!: User;
+  globalUserReturn!: object[];
 
   constructor(private apiCall: ApiServiceService) {}
 
@@ -25,8 +26,19 @@ export class UsersComponent implements OnInit {
         console.log(error);
       }
     );
-    // this.retunedUser = this.apiCall.user;
-    // // console.log(this.apiCall.user);
-    // console.log(this.retunedUser);
+  }
+
+  globalUserSearch(userInput: string) {
+    // this.apiCall.globalUserSearch(userInput).then(
+    //   (success) => {
+    //     this.globalUserReturn = this.apiCall.users;
+    //     console.log(this.globalUserReturn);
+    //   },
+    //   (error) => {
+    //     alert('User not found');
+    //     console.log(error);
+    //   }
+    // );
+    this.apiCall.globalUserSearch(userInput);
   }
 }

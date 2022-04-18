@@ -8,8 +8,6 @@ export const environment = {
   globalUserSearch: 'https://api.github.com/search/users?q=',
   userSearch: 'https://api.github.com/users/',
   globalRepoSearch: 'https://api.github.com/search/repositories?q=',
-  accessToken:
-    'ghp_6HYKuKTMQhARjhgdsjfklkahfjkjdsaflkjgdkjhfgkdsalXa23fY43MbB8sHqjZi22iCd',
 };
 
 /*

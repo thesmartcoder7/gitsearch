@@ -9,6 +9,7 @@ import { Repository } from '../classes/repository';
 })
 export class ApiServiceService {
   user!: User;
+  users!: object[];
 
   constructor(private http: HttpClient) {}
   //global user search
@@ -19,14 +20,11 @@ export class ApiServiceService {
     }
     let promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get<ApiResponse>(`${environment.globalUserSearch}${userInput}`, {
-          headers: {
-            Authorization: `token ${environment.accessToken}`,
-          },
-        })
+        .get<any>(`${environment.globalUserSearch}${userInput}`)
         .subscribe({
           next: (res: any) => {
-            this.user = res.items[0];
+            // this.users = res;
+            console.log(res.items);
             // console.log(this.user);
             resolve();
           },
