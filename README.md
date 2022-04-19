@@ -14,7 +14,7 @@
 
 ## Description
 
-This is a simple Angular project that makes use of the github API to search for users and displays their information.[live site]()
+This is a simple Angular project that makes use of the github API to search for users and displays their information.[live site](https://gitsearch7.netlify.app/)
 
 ## Behaviour Driven Development
 
