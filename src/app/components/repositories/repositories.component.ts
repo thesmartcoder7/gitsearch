@@ -12,7 +12,8 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 export class RepositoriesComponent implements OnInit {
   currentUser!: User;
   user!: string;
-  repositories!: Repository[];
+  repositories!: any[];
+  bestRepository!: any;
   constructor(
     private route: ActivatedRoute,
     private apiCall: ApiServiceService
@@ -30,6 +31,14 @@ export class RepositoriesComponent implements OnInit {
     this.apiCall.userRepositoriesSearch(username).then(
       (success) => {
         this.repositories = this.apiCall.userRepositories;
+        this.bestRepository = this.repositories[0];
+        for (let i = 0; i < this.repositories.length; i++) {
+          if (
+            this.repositories[i].forks_count > this.bestRepository.forks_count
+          ) {
+            this.bestRepository = this.repositories[i];
+          }
+        }
       },
       (error) => {
         alert('User not found');

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from '../classes/user';
-import { Repository } from '../classes/repository';
 
 @Injectable({
   providedIn: 'root',
@@ -14,11 +13,22 @@ export class ApiServiceService {
   repositories!: object[];
 
   constructor(private http: HttpClient) {}
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      Authorization: `token ${environment.accessToken}`,
+    }),
+  };
+
   //global user search
   globalUserSearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get<User[]>(`${environment.globalUserSearch}${userInput}`)
+        .get<User[]>(`${environment.globalUserSearch}${userInput}`, {
+          headers: {
+            Authorization: `token ${environment.accessToken}`,
+          },
+        })
         .subscribe({
           next: (res: any) => {
             this.users = res.items;
@@ -39,7 +49,11 @@ export class ApiServiceService {
   globalRepositorySearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get<any>(`${environment.globalRepoSearch}${userInput}`)
+        .get<any>(`${environment.globalRepoSearch}${userInput}`, {
+          headers: {
+            Authorization: `token ${environment.accessToken}`,
+          },
+        })
         .subscribe({
           next: (res: any) => {
             this.repositories = res.items;
@@ -60,7 +74,11 @@ export class ApiServiceService {
   userSearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       return this.http
-        .get<User>(`${environment.userSearch}${userInput}`)
+        .get<User>(`${environment.userSearch}${userInput}`, {
+          headers: {
+            Authorization: `token ${environment.accessToken}`,
+          },
+        })
         .subscribe({
           next: (res: User) => {
             this.user = res;
@@ -81,7 +99,11 @@ export class ApiServiceService {
   userRepositoriesSearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       return this.http
-        .get<any[]>(`${environment.userSearch}${userInput}/repos`)
+        .get<any[]>(`${environment.userSearch}${userInput}/repos`, {
+          headers: {
+            Authorization: `token ${environment.accessToken}`,
+          },
+        })
         .subscribe({
           next: (res: any[]) => {
             this.userRepositories = res;

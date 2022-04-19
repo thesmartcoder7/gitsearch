@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/classes/user';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Repository } from 'src/app/classes/repository';
 
 @Component({
   selector: 'app-user-populated',
@@ -13,6 +12,8 @@ export class UserPopulatedComponent implements OnInit {
   currentUser!: User;
   user!: string;
   repositories!: any[];
+  bestRepository: any;
+  totalForks: number = 0;
   constructor(
     private apiCall: ApiServiceService,
     private route: ActivatedRoute,
@@ -37,6 +38,18 @@ export class UserPopulatedComponent implements OnInit {
     this.apiCall.userRepositoriesSearch(username).then(
       (success) => {
         this.repositories = this.apiCall.userRepositories;
+        this.bestRepository = this.repositories[0];
+        for (let i = 0; i < this.repositories.length; i++) {
+          if (
+            this.repositories[i].forks_count > this.bestRepository.forks_count
+          ) {
+            this.bestRepository = this.repositories[i];
+          }
+        }
+        console.log(this.bestRepository);
+        for (let i = 0; i < this.repositories.length; i++) {
+          this.totalForks += this.repositories[i].forks_count;
+        }
       },
       (error) => {
         alert('User not found');

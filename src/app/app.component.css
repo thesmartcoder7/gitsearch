@@ -1,0 +1,11 @@
+@keyframes float {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -2%;
+  }
+  100% {
+    margin-top: 0;
+  }
+}

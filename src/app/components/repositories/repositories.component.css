@@ -113,3 +113,9 @@
   font-size: 0.8vw;
   font-weight: 500;
 }
+
+.most-forked {
+  padding: 10%;
+  height: 100%;
+  border-radius: 0.5vw;
+}
