@@ -1,3 +1,12 @@
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -84,6 +93,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
+  animation: appear 0.5s;
 }
 
 .items::-webkit-scrollbar {
@@ -120,4 +130,104 @@
   font-size: 0.8vw;
   cursor: pointer;
   text-overflow: clip;
+}
+
+.single-user {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  animation: appear 0.5s;
+}
+
+.single-user .user-info {
+  width: 50%;
+}
+
+.single-user .user-info .img img {
+  width: 15vw;
+  border-radius: 0.7vw;
+  cursor: pointer;
+}
+
+.single-user .user-info .info .handle {
+  font-size: 1.1vw;
+  margin-top: 3%;
+  color: #dcdddd;
+  cursor: pointer;
+}
+
+.single-user .user-info .info .handle:hover {
+  color: #009ff6;
+}
+
+.single-user .user-info .info button {
+  padding: 3% 6%;
+  color: #dcdddd;
+  background-color: #009ff6;
+  font-size: 0.8vw;
+  border: none;
+  outline: none;
+  border-radius: 0.2vw;
+  margin-top: 10%;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.single-user .repo-info {
+  width: 50%;
+  text-align: left;
+}
+
+.single-user .repo-info h3 {
+  color: #009ff6;
+  font-size: 1.3vw;
+  text-transform: capitalize;
+}
+
+.single-user .repo-info .stats {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.single-user .repo-info .stats div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 5%;
+  text-transform: capitalize;
+}
+
+.single-user .repo-info .stats div svg {
+  color: #009ff6;
+  margin-right: 10%;
+  width: 1vw;
+}
+
+.single-user .repo-info p {
+  color: #dcdddd;
+  font-size: 0.8vw;
+  line-height: 1.6vw;
+  margin-top: 2%;
+}
+
+.single-user .repo-info p.back-link {
+  color: #009ff6;
+  cursor: pointer;
+}
+
+.single-user .repo-info a {
+  text-decoration: none;
+  color: #009ff6;
+  font-size: 0.8vw;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.single-user .repo-info a:hover,
+.single-user .repo-info p.back-link:hover {
+  color: #5dc3fa;
 }

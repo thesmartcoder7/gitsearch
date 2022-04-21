@@ -1,5 +1,13 @@
 <div class="container">
-  <div class="user-image" *ngIf="isRepositories === false && isUsers === false">
+  <!-- default entry point -->
+  <div
+    class="user-image"
+    *ngIf="
+      isRepositories === false &&
+      isUsers === false &&
+      isSingleRepository === false
+    "
+  >
     <img
       src="../../../assets/version-control.svg"
       alt="github user version control"
@@ -24,19 +32,88 @@
 
   <!-- repositories search -->
   <div class="user-image items" *ngIf="isRepositories === true">
-    <div *ngFor="let repo of globalRepoReturn">
+    <div *ngFor="let repo of globalRepoReturn; let i = index">
       <div class="user">
         <img
           class="user-profile"
           src="{{ repo.owner.avatar_url }}"
           alt="user-profile"
+          (click)="showSingleRepo(i)"
         />
         <br />
-        <h3>&nbsp;&nbsp;&nbsp;&nbsp;{{ repo.name }}</h3>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ repo.owner.login }}</p>
+        <h3 (click)="showSingleRepo(i)">
+          &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.name }}
+        </h3>
+        <p (click)="showSingleRepo(i)">
+          &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.owner.login }}
+        </p>
       </div>
     </div>
   </div>
+
+  <!-- single respository view search -->
+  <div class="user-image items" *ngIf="isSingleRepository === true">
+    <div class="single-user">
+      <div class="user-info">
+        <div class="img">
+          <img
+            class="user-profile"
+            src="{{ singleRepository.owner.avatar_url }}"
+            alt="user-profile"
+            (click)="goToUserFromRepo(singleRepository.owner.login)"
+          />
+        </div>
+        <div class="info">
+          <p
+            class="handle"
+            (click)="goToUserFromRepo(singleRepository.owner.login)"
+          >
+            @{{ singleRepository.owner.login }}
+          </p>
+          <button (click)="goToUserFromRepo(singleRepository.owner.login)">
+            View User
+          </button>
+        </div>
+      </div>
+      <div class="repo-info">
+        <h3>{{ singleRepository.name }}</h3>
+        <p class="description">
+          {{ singleRepository.description }}
+        </p>
+        <br />
+        <div class="stats">
+          <div class="forks">
+            <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M22 5a3 3 0 1 0-4 2.816V11H6V7.816a3 3 0 1 0-2 0V11a2 2 0 0 0 2 2h5v4.184a3 3 0 1 0 2 0V13h5a2 2 0 0 0 2-2V7.816A2.991 2.991 0 0 0 22 5Z"
+              />
+            </svg>
+            <p>Forks : &nbsp;&nbsp;{{ singleRepository.forks_count }}</p>
+          </div>
+          <div class="visibility">
+            <svg aria-hidden="true" role="img" viewBox="0 0 20 20">
+              <path
+                fill="currentColor"
+                d="M10 4.4C3.439 4.4 0 9.232 0 10c0 .766 3.439 5.6 10 5.6c6.56 0 10-4.834 10-5.6c0-.768-3.44-5.6-10-5.6zm0 9.907c-2.455 0-4.445-1.928-4.445-4.307c0-2.379 1.99-4.309 4.445-4.309s4.444 1.93 4.444 4.309c0 2.379-1.989 4.307-4.444 4.307zM10 10c-.407-.447.663-2.154 0-2.154c-1.228 0-2.223.965-2.223 2.154s.995 2.154 2.223 2.154c1.227 0 2.223-.965 2.223-2.154c0-.547-1.877.379-2.223 0z"
+              />
+            </svg>
+            <p>Visibility : &nbsp;&nbsp;{{ singleRepository.visibility }}</p>
+          </div>
+        </div>
+        <br />
+        <a href="{{ singleRepository.html_url }}" target="blank"
+          >Visit Repository</a
+        >
+        <br />
+        <p class="back-link" (click)="repoResults()">
+          &#8592; &nbsp;Back to results
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- right side input form -->
   <div class="search-div">
     <h2>Find a user or a Repo</h2>
     <p>
