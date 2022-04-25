@@ -41,12 +41,14 @@
           (click)="showSingleRepo(i)"
         />
         <br />
-        <h3 (click)="showSingleRepo(i)">
-          &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.name }}
-        </h3>
-        <p (click)="showSingleRepo(i)">
-          &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.owner.login }}
-        </p>
+        <div class="user-details">
+          <h3 (click)="showSingleRepo(i)">
+            &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.name }}
+          </h3>
+          <p (click)="showSingleRepo(i)">
+            &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.owner.login }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
