@@ -50,6 +50,7 @@ export class UsersComponent implements OnInit {
     );
   }
 
+  // gets any user with the same name or username as the user input
   globalUserSearch(userInput: string) {
     this.apiCall.globalUserSearch(userInput).then(
       (success) => {
