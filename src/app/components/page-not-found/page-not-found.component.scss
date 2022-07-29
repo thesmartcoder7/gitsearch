@@ -1,21 +1,39 @@
+@import "../../../mixins";
+
 .not-found {
-  padding: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 80%;
 }
 
 h2 {
   color: #009ff6;
   font-size: 7vw;
   letter-spacing: 0.5vw;
+  @include tablet {
+    font-size: 10vw;
+  }
+  @include mobile {
+    font-size: 25vw;
+  }
 }
 
 h3 {
   color: #dcdddd;
   font-size: 2vw;
   letter-spacing: 0.1vw;
+  @include tablet {
+    text-align: center;
+    width: 80%;
+    font-size: 3vw;
+  }
+  @include mobile {
+    text-align: center;
+    width: 80%;
+    font-size: 5vw;
+  }
 }
 
 button {
@@ -28,4 +46,14 @@ button {
   outline: none;
   font-size: 0.9vw;
   cursor: pointer;
+  @include tablet {
+   font-size: 1.9vw;
+   padding: 2% 3%;
+  }
+  @include mobile {
+    margin-top: 5%;
+    font-size: 3.1vw;
+    padding: 2% 3%;
+    font-weight: 500;
+   }
 }
