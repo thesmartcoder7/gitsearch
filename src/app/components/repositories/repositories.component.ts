@@ -13,6 +13,7 @@ export class RepositoriesComponent implements OnInit {
   currentUser!: User;
   user!: string;
   repositories!: any[];
+  filteredRepositories!: any[];
   bestRepository!: any;
   constructor(
     private route: ActivatedRoute,
