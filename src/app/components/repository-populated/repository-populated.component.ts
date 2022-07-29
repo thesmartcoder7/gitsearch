@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/classes/user';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
@@ -10,10 +11,12 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 export class RepositoryPopulatedComponent implements OnInit {
   repository!: any;
   repositories!: any[];
-  user!: any;
+  user!: User;
+  globalUserReturn!: any[];
   constructor(
     private route: ActivatedRoute,
-    private apiCall: ApiServiceService
+    private apiCall: ApiServiceService,
+    private reRoute: Router
   ) {}
 
   ngOnInit(): void {
@@ -26,16 +29,25 @@ export class RepositoryPopulatedComponent implements OnInit {
         (success) => {
           this.repositories = this.apiCall.userRepositories;
           for (let repository of this.repositories) {
-            if(Number(repoId) == repository.id && repoOwner == repository.owner.login && repoName == repository.name){
-              this.repository = repository
+            if (
+              Number(repoId) == repository.id &&
+              repoOwner == repository.owner.login &&
+              repoName == repository.name
+            ) {
+              this.repository = repository;
+              console.log(repository);
             }
-          }
-          console.log(this.repository);
-        },
+          }},
         (error) => {
-          console.log('Repository not found!')
+          console.log('Repository not found!');
         }
       );
+    });
+  }
+
+  goToUser(string: string) {
+    this.reRoute.navigate(['/user'], {
+      queryParams: { data: string },
     });
   }
 }

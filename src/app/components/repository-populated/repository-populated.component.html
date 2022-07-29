@@ -1,1 +1,81 @@
-<p>repository-populated works!</p>
+<div class="container">
+  <div class="user-info">
+    <div class="user-profile">
+      <img src="{{ repository.owner.avatar_url }}" alt="user-profile" /> 
+    </div>
+    <div class="user-meta">
+      <p class="user-handle">@{{ repository.owner.login }}</p>
+      <h3 class="full-name">{{ repository.name }}</h3>
+      <p class="counts">
+        {{ repository.description }}
+      </p>
+      <a href="{{ repository.html_url }}" target="blank">
+        <button>View Poject</button>
+      </a>
+      &nbsp;
+      <a (click)="goToUser(repository.owner.login)">
+        <button>View User</button>
+      </a>
+    </div>
+  </div>
+  <div class="user-important">
+    <!-- repositories -->
+    <div class="repositories">
+      <div class="count">
+        <h3 >Size</h3>
+        <p class="repo">
+          <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M6 7V4a1 1 0 0 1 1-1h6.414l2 2H21a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3zm0 2H4v10h12v-2H6V9z"
+            />
+          </svg>
+          {{ repository.size }}
+        </p>
+      </div>
+      <div class="latest">
+        <h3> 
+            Open Issues 
+        </h3>
+        <p class="l-repo">
+          <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M6 7V4a1 1 0 0 1 1-1h6.414l2 2H21a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3zm0 2H4v10h12v-2H6V9z"
+            />
+          </svg>
+          <a href=""></a>
+          {{ repository.open_issues }}
+        </p>
+      </div>
+    </div>
+
+    <!-- forks -->
+    <div class="forks">
+      <div class="count">
+        <h3>Forks</h3>
+        <p class="forked">
+          <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M22 5a3 3 0 1 0-4 2.816V11H6V7.816a3 3 0 1 0-2 0V11a2 2 0 0 0 2 2h5v4.184a3 3 0 1 0 2 0V13h5a2 2 0 0 0 2-2V7.816A2.991 2.991 0 0 0 22 5Z"
+            />
+          </svg>
+          {{ repository.forks }}
+        </p>
+      </div>
+      <div class="highest">
+        <h3>Watchers</h3>
+        <p class="m-forked">
+          <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M6 7V4a1 1 0 0 1 1-1h6.414l2 2H21a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3zm0 2H4v10h12v-2H6V9z"
+            />
+          </svg>
+          {{ repository.watchers }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,447 @@
+@import "../../../mixins";
+
+.container {
+  padding: 5% 10%;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  @include tablet {
+    padding: 10% 10%;
+    height: auto;
+  }
+  @include mobile {
+    height: auto;
+    padding: 15% 10%;
+  }
+}
+
+.user-info,
+.user-important {
+  padding: 0 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @include tablet-pro {
+    padding: 0 0 0 10%;
+  }
+  @include tablet {
+    padding: 0 0 0 10%;
+  }
+  @include mobile {
+    padding: 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.user-important {
+  @include tablet {
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mobile {
+    width: 100%;
+  }
+  img {
+    width: 15vw;
+    border-radius: 1vw;
+    @include tablet {
+      width: 20vw;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.user-meta {
+  padding-left: 5%;
+  width: 100%;
+  @include mobile {
+    width: 100%;
+    margin-top: 5%;
+    padding-left: 0;
+  }
+  p {
+    @include laptop {
+      font-size: 1vw;
+    }
+    @include tablet-pro {
+      font-size: 1.2vw;
+    }
+    @include tablet {
+      font-size: 1.5vw;
+    }
+    @include mobile {
+      font-size: 3.5vw;
+    }
+  }
+}
+
+.user-meta .user-handle {
+  color: #dcdddd;
+  font-size: 0.8vw;
+  padding: 1% 0;
+  @include laptop {
+    font-size: 1.1vw;
+  }
+  @include tablet-pro {
+    font-size: 1.5vw;
+  }
+  @include tablet {
+    font-size: 2vw;
+  }
+  @include mobile {
+    font-size: 4vw;
+  }
+}
+
+.user-meta .full-name {
+  color: #009ff6;
+  font-size: 2vw;
+  font-weight: 500;
+  letter-spacing: 0.08vw;
+  @include tablet-pro {
+    font-size: 2.3vw;
+  }
+  @include tablet {
+    font-size: 3vw;
+  }
+  @include mobile {
+    font-size: 5vw;
+  }
+}
+
+.user-meta .counts {
+  color: #dcdddd;
+  width: 100%;
+  font-size: 0.8vw;
+  padding: 1% 0;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05vw;
+  @include laptop {
+    font-size: 1vw;
+  }
+  @include tablet-pro {
+    font-size: 1.3vw;
+  }
+  @include tablet {
+    font-size: 1.8vw;
+  }
+  @include mobile {
+    font-size: 3.5vw;
+  }
+}
+
+.user-meta .counts svg {
+  width: 1.5vw;
+  height: 1.5vw;
+  color: #009ff6;
+  @include tablet {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  @include mobile {
+    width: 3.5vw;
+    height: 3.5vw;
+  }
+}
+
+.user-meta a button {
+  padding: 2% 5%;
+  margin-top: 5%;
+  background-color: #009ff6;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.2vw;
+  font-size: 0.8vw;
+  cursor: pointer;
+  @include laptop {
+    font-size: 1vw;
+  }
+  @include tablet-pro {
+    font-size: 1.3vw;
+  }
+  @include tablet {
+    font-size: 1.7vw;
+  }
+  @include mobile {
+    font-size: 2.7vw;
+  }
+}
+
+/* - - - repository styling - - - */
+.user-important {
+  width: 100%;
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @include tablet {
+    margin-top: 10%;
+  }
+  @include mobile {
+    margin-top: 15%;
+  }
+}
+
+.repositories,
+.forks {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  background-color: #222327;
+  border-radius: 0.5vw;
+  margin-right: 5%;
+  text-transform: capitalize;
+  @include tablet {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 5%;
+  }
+  @include mobile {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 5%;
+  }
+}
+
+.repositories h3,
+.forks h3 {
+  color: #dcdddd;
+  cursor: pointer;
+  font-size: 1vw;
+  @include laptop {
+    font-size: 1.2vw;
+  }
+  @include tablet-pro {
+    font-size: 1.4vw;
+  }
+  @include tablet {
+    font-size: 2vw;
+  }
+  @include mobile {
+    font-size: 3.7vw;
+  }
+}
+
+.repositories h3 a,
+.forks h3 a {
+  text-decoration: none;
+  color: #dcdddd;
+  @include laptop {
+    font-size: 1.2vw;
+  }
+  @include tablet-pro {
+    font-size: 1.4vw;
+  }
+  @include tablet {
+    font-size: 1.7vw;
+  }
+  @include mobile {
+    font-size: 3.7vw;
+  }
+}
+
+.repositories h3 a:hover,
+.forks h3 a:hover {
+  color: #009ff6;
+}
+
+.repositories h3:hover,
+.forks h3:hover {
+  color: #009ff6;
+}
+
+.repositories p,
+.forks p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  color: #dcdddd;
+  font-size: 0.8vw;
+  margin-top: 5%;
+  @include laptop {
+    font-size: 1vw;
+  }
+  @include tablet-pro {
+    font-size: 1.2vw;
+  }
+  @include tablet {
+    font-size: 1.5vw;
+  }
+  @include mobile {
+    font-size: 3.5vw;
+  }
+  svg {
+    width: 1vw;
+    height: 1vw;
+    margin-right: 5%;
+    color: #009ff6;
+    @include laptop {
+      width: 1.2vw;
+      height: 1.2vw;
+    }
+    @include tablet-pro {
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+    @include tablet {
+      width: 2vw;
+      height: 2vw;
+    }
+    @include mobile {
+      width: 2vw;
+      height: 2vw;
+    }
+  }
+}
+
+.repositories .repo svg,
+.forks .forked svg {
+  width: 1vw;
+  height: 1vw;
+  margin-right: 5%;
+  color: #009ff6;
+  @include laptop {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+  @include tablet-pro {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  @include tablet {
+    width: 2vw;
+    height: 2vw;
+  }
+  @include mobile {
+    width: 3vw;
+    height: 3vw;
+  }
+}
+
+.repositories .latest svg,
+.forks .m-forked svg {
+  width: 0.5vw;
+  height: 0.5vw;
+  margin-right: 5%;
+  color: #009ff6;
+  @include laptop {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+  @include tablet-pro {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  @include tablet {
+    width: 2vw;
+    height: 2vw;
+  }
+  @include mobile {
+    width: 3vw;
+    height: 3vw;
+  }
+}
+
+.repositories .count,
+.repositories .latest,
+.forks .count,
+.forks .highest {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  height: auto;
+  svg {
+    width: 1vw;
+    height: 1vw;
+    @include laptop {
+      width: 1.2vw;
+      height: 1.2vw;
+    }
+    @include tablet-pro {
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+    @include tablet {
+      width: 2vw;
+      height: 2vw;
+    }
+    @include mobile {
+      width: 3vw;
+      height: 3vw;
+    }
+  }
+}
+
+.repositories .count,
+.forks .count {
+  border-radius: 0.5vw 0 0 0.5vw;
+  height: auto;
+  background-color: #18191d;
+  svg {
+    width: 1vw;
+    height: 1vw;
+    @include laptop {
+      width: 1.2vw;
+      height: 1.2vw;
+    }
+    @include tablet-pro {
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+    @include tablet {
+      width: 2vw;
+      height: 2vw;
+    }
+    @include mobile {
+      width: 3vw;
+      height: 3vw;
+    }
+  }
+}
+
+.repositories p,
+.forks p {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 1vw;
+    height: 1vw;
+    @include laptop {
+      width: 1.2vw;
+      height: 1.2vw;
+    }
+    @include tablet-pro {
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+    @include tablet {
+      width: 3vw;
+      height: 3vw;
+    }
+  }
+}
