@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-user-populated',
   templateUrl: './user-populated.component.html',
-  styleUrls: ['./user-populated.component.css'],
+  styleUrls: ['./user-populated.component.scss'],
 })
 export class UserPopulatedComponent implements OnInit {
   currentUser!: User;

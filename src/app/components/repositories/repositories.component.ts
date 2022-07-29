@@ -7,7 +7,7 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 @Component({
   selector: 'app-repositories',
   templateUrl: './repositories.component.html',
-  styleUrls: ['./repositories.component.css'],
+  styleUrls: ['./repositories.component.scss'],
 })
 export class RepositoriesComponent implements OnInit {
   currentUser!: User;
