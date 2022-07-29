@@ -1,0 +1,35 @@
+@mixin mobile {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 501px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-pro {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media (min-width: 1441px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin ultrawide {
+  @media (min-width: 1921px) {
+    @content;
+  }
+}

@@ -16,37 +16,46 @@
 
   <!-- user profile search -->
   <div class="user-image items" *ngIf="isUsers === true">
-    <div *ngFor="let user of globalUserReturn; let i = index">
+    <div
+      *ngFor="let user of globalUserReturn; let i = index"
+      class="user-outer"
+    >
       <div class="user">
-        <img
-          class="user-profile"
-          src="{{ user.avatar_url }}"
-          alt="user-profile"
-          (click)="goToUser(i)"
-        />
-        <br />
-        <p (click)="goToUser(i)">&nbsp;&nbsp;&nbsp;&nbsp;{{ user.login }}</p>
+        <div class="user-profile-image">
+          <img
+            class="user-profile"
+            src="{{ user.avatar_url }}"
+            alt="user-profile"
+            (click)="goToUser(i)"
+          />
+        </div>
+        <p (click)="goToUser(i)">{{ user.login }}</p>
       </div>
     </div>
   </div>
 
   <!-- repositories search -->
   <div class="user-image items" *ngIf="isRepositories === true">
-    <div *ngFor="let repo of globalRepoReturn; let i = index">
+    <div
+      *ngFor="let repo of globalRepoReturn; let i = index"
+      class="user-outer"
+    >
       <div class="user">
-        <img
-          class="user-profile"
-          src="{{ repo.owner.avatar_url }}"
-          alt="user-profile"
-          (click)="showSingleRepo(i)"
-        />
-        <br />
+        <div class="user-profile-image">
+          <img
+            class="user-profile"
+            src="{{ repo.owner.avatar_url }}"
+            alt="user-profile"
+            (click)="showSingleRepo(i)"
+          />
+        </div>
+
         <div class="user-details">
           <h3 (click)="showSingleRepo(i)">
-            &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.name }}
+            {{ repo.name }}
           </h3>
           <p (click)="showSingleRepo(i)">
-            &nbsp;&nbsp;&nbsp;&nbsp;{{ repo.owner.login }}
+            {{ repo.owner.login }}
           </p>
         </div>
       </div>
