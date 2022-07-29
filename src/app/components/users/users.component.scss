@@ -159,9 +159,11 @@
   text-align: center;
   color: #009ff6;
   font-size: 0.8vw;
-  padding: 0 2vw;
   cursor: pointer;
   text-overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
   margin-top: 0.5vw;
   @include laptop {
     font-size: 1vw;
@@ -179,8 +181,9 @@
   cursor: pointer;
   text-overflow: hidden;
   word-wrap: break-word;
+  white-space: pre-line;
+  word-break: break-all;
   margin-top: 0.5vw;
-  padding: 0 2vw;
   @include laptop {
     font-size: 1vw;
   }
