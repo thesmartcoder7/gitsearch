@@ -12,6 +12,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UserPopulatedComponent } from './components/user-populated/user-populated.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DateFormatPipe } from './pipes/date-format.pipe';
+import { RepositoryPopulatedComponent } from './components/repository-populated/repository-populated.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DateFormatPipe } from './pipes/date-format.pipe';
     UserPopulatedComponent,
     PageNotFoundComponent,
     DateFormatPipe,
+    RepositoryPopulatedComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

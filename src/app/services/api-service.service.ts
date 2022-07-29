@@ -11,6 +11,7 @@ export class ApiServiceService {
   users!: object[];
   userRepositories!: any[];
   repositories!: object[];
+  singleRepositoy!: object[]
 
   constructor(private http: HttpClient) {}
 

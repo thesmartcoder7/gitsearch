@@ -18,6 +18,7 @@ export class UsersComponent implements OnInit {
   singleUserImage!: string;
   singleUserLogin!: string;
   singleRepository!: any;
+  searchForm = true;
 
   constructor(private apiCall: ApiServiceService, private route: Router) {}
 
@@ -72,6 +73,15 @@ export class UsersComponent implements OnInit {
     this.isSingleRepository = true;
     this.isUsers = false;
     this.isRepositories = false;
+    this.searchForm = false;
+  }
+
+  goToRepo(index: number) {
+    this.route.navigate(['/single-repo'], {
+      queryParams: {
+        data: `${this.globalRepoReturn[index].id} ${this.globalRepoReturn[index].owner.login} ${this.globalRepoReturn[index].name}`,
+      },
+    });
   }
 
   repoResults() {

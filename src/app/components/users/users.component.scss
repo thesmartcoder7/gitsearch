@@ -381,6 +381,47 @@
   color: #009ff6;
   font-size: 1.3vw;
   text-transform: capitalize;
+  @include laptop {
+    font-size: 1.2vw;
+  }
+  @include tablet-pro {
+    font-size: 1.4vw;
+  }
+  @include tablet {
+    font-size: 2vw;
+  }
+  @include mobile {
+    font-size: 3.7vw;
+  }
+}
+
+.single-user .repo-info p.description {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: #dcdddd;
+  font-size: 0.8vw;
+  cursor: pointer;
+  text-overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
+  word-break: break-all;
+  margin-top: 0.5vw;
+  @include laptop {
+    font-size: 1vw;
+  }
+  @include tablet-pro {
+    font-size: 1.2vw;
+  }
+  @include tablet {
+    font-size: 1.5vw;
+    line-height: 2.8vw;
+  }
+  @include mobile {
+    font-size: 3.5vw;
+  }
 }
 
 .single-user .repo-info .stats {
@@ -388,6 +429,18 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  p {
+    @include laptop {
+      font-size: 1vw;
+    }
+    @include tablet {
+      font-size: 1.9vw;
+    }
+    @include mobile {
+      margin-top: 0.7vw;
+      font-size: 3.2vw;
+    }
+  }
 }
 
 .single-user .repo-info .stats div {
@@ -399,10 +452,27 @@
   text-transform: capitalize;
 }
 
-.single-user .repo-info .stats div svg {
+.single-user .repo-info .stats div svg,
+.single-user .repo-info .stats .forks svg{
   color: #009ff6;
   margin-right: 10%;
   width: 1vw;
+  @include laptop {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+  @include tablet-pro {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  @include tablet {
+    width: 2vw;
+    height: 2vw;
+  }
+  @include mobile {
+    width: 2vw;
+    height: 2vw;
+  }
 }
 
 .single-user .repo-info p {
@@ -410,6 +480,16 @@
   font-size: 0.8vw;
   line-height: 1.6vw;
   margin-top: 2%;
+  @include laptop {
+    font-size: 1vw;
+  }
+  @include tablet {
+    font-size: 1.9vw;
+  }
+  @include mobile {
+    margin-top: 0.7vw;
+    font-size: 3.2vw;
+  }
 }
 
 .single-user .repo-info p.back-link {
@@ -423,6 +503,16 @@
   font-size: 0.8vw;
   cursor: pointer;
   font-weight: 500;
+  @include laptop {
+    font-size: 1vw;
+  }
+  @include tablet {
+    font-size: 1.9vw;
+  }
+  @include mobile {
+    margin-top: 0.7vw;
+    font-size: 3.2vw;
+  }
 }
 
 .single-user .repo-info a:hover,

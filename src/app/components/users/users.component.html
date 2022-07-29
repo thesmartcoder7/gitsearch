@@ -46,15 +46,15 @@
             class="user-profile"
             src="{{ repo.owner.avatar_url }}"
             alt="user-profile"
-            (click)="showSingleRepo(i)"
+            (click)="goToRepo(i)"
           />
         </div>
 
         <div class="user-details">
-          <h3 (click)="showSingleRepo(i)">
+          <h3 (click)="goToRepo(i)">
             {{ repo.name }}
           </h3>
-          <p (click)="showSingleRepo(i)">
+          <p (click)="goToRepo(i)">
             {{ repo.owner.login }}
           </p>
         </div>

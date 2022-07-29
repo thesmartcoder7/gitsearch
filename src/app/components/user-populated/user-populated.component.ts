@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/classes/user';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-user-populated',
@@ -17,7 +18,8 @@ export class UserPopulatedComponent implements OnInit {
   constructor(
     private apiCall: ApiServiceService,
     private route: ActivatedRoute,
-    private otherRoute: Router
+    private otherRoute: Router,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -76,5 +78,9 @@ export class UserPopulatedComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  goBack(){
+    this.location.back()
   }
 }
