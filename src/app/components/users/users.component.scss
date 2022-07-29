@@ -15,6 +15,18 @@
   justify-content: space-between;
   padding: 10%;
   width: 100%;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
 .user-image {
@@ -22,11 +34,35 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  @include tablet {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @include mobile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .user-image img {
   width: 30vw;
   opacity: 0.9;
+  @include laptop {
+    width: 35vw;
+  }
+  @include tablet-pro {
+    width: 35vw;
+  }
+  @include tablet {
+    width: 70%;
+  }
+  @include mobile {
+    width: 80%;
+  }
 }
 
 .search-div {
@@ -37,6 +73,22 @@
   align-items: flex-start;
   justify-content: center;
   text-align: left;
+  @include tablet {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-top: 15%;
+  }
+  @include mobile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-top: 15%;
+  }
 }
 
 .search-div h2 {
@@ -47,6 +99,15 @@
   @include laptop {
     font-size: 2vw;
   }
+  @include tablet-pro {
+    font-size: 2.5vw;
+  }
+  @include tablet {
+    font-size: 4vw;
+  }
+  @include mobile {
+    font-size: 5vw;
+  }
 }
 
 .search-div p {
@@ -55,6 +116,17 @@
   margin-top: 2%;
   @include laptop {
     font-size: 1.4vw;
+  }
+  @include tablet-pro {
+    font-size: 1.6vw;
+  }
+  @include tablet {
+    text-align: center;
+    font-size: 2.5vw;
+  }
+  @include mobile {
+    text-align: center;
+    font-size: 3.5vw;
   }
 }
 
@@ -70,6 +142,18 @@
   @include laptop {
     font-size: 1vw;
   }
+  @include tablet-pro {
+    font-size: 1.3vw;
+  }
+  @include tablet {
+    text-align: center;
+    font-size: 2vw;
+  }
+  @include mobile {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 3vw;
+  }
 }
 
 .search-div input::placeholder {
@@ -81,6 +165,17 @@
   align-items: center;
   justify-content: flex-start;
   margin-top: 5%;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @include mobile {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .search-div .buttons button {
   padding: 7% 15%;
@@ -98,6 +193,17 @@
   @include laptop {
     font-size: 1vw;
   }
+  @include tablet-pro {
+    font-size: 1.3vw;
+  }
+  @include tablet {
+    font-size: 2vw;
+    border-radius: 0.5vw;
+  }
+  @include mobile {
+    font-size: 3vw;
+    border-radius: 0.6vw;
+  }
 }
 
 .items {
@@ -109,6 +215,12 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   animation: appear 0.5s;
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .items::-webkit-scrollbar {
@@ -121,6 +233,9 @@
   margin-right: 0.2vw;
   align-items: center;
   justify-content: center;
+  @include mobile {
+    width: 48%;
+  }
 }
 
 .items .user-outer .user {
@@ -137,12 +252,23 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include tablet {
+      width: 100%;
+      height: 15vw;
+    }
+    @include mobile {
+      width: 100%;
+      height: 30vw;
+    }
     img {
       object-fit: cover;
       width: 100%;
       height: 100%;
       border-radius: 0.5vw;
       cursor: pointer;
+      @include mobile {
+        border-radius: 1vw;
+      }
     }
   }
 }
@@ -168,6 +294,13 @@
   @include laptop {
     font-size: 1vw;
   }
+  @include tablet {
+    font-size: 1.8vw;
+  }
+  @include mobile {
+    margin-top: 0.7vw;
+    font-size: 3vw;
+  }
 }
 
 .items .user p {
@@ -186,6 +319,13 @@
   margin-top: 0.5vw;
   @include laptop {
     font-size: 1vw;
+  }
+  @include tablet {
+    font-size: 1.8vw;
+  }
+  @include mobile {
+    margin-top: 0.7vw;
+    font-size: 3vw;
   }
 }
 

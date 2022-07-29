@@ -1,3 +1,6 @@
+
+@import '../../../mixins';
+
 header {
   width: 100%;
   padding: 3% 7% 0 7%;
@@ -5,6 +8,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  @include tablet{
+    padding: 5% 7% 0 7%;
+  }
+  @include mobile{
+    padding: 7% 7% 0 7%;
+  }
 }
 
 header .github-logo {
@@ -16,6 +25,20 @@ header .github-logo {
 header .github-logo svg {
   fill: #009ff6;
   cursor: pointer;
+  width: 3vw;
+  height: 3vw;
+  @include tablet-pro{
+    width: 4vw;
+    height: 4vw;
+  }
+  @include tablet{
+    width: 5vw;
+    height: 5vw;
+  }
+  @include mobile{
+    width: 8vw;
+    height: 8vw;
+  }
 }
 
 header .logo-title {
@@ -31,6 +54,16 @@ header .logo-title h1 {
   font-size: 2vw;
   letter-spacing: 0.15vw;
   cursor: pointer;
+  @include tablet-pro {
+    font-size: 2.5vw;
+  }
+  @include tablet{
+    font-size: 3vw;
+  }
+  @include mobile{
+    font-size: 5vw;
+    margin-left: 1vw;
+  }
 }
 
 header .logo-title h1 span {
@@ -38,4 +71,10 @@ header .logo-title h1 span {
   text-transform: capitalize;
   font-size: 1.7vw;
   cursor: pointer;
+  @include tablet{
+    font-size: 2.7vw;
+  }
+  @include mobile{
+    font-size: 4.5vw;
+  }
 }
