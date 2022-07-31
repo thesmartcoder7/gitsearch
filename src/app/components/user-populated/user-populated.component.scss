@@ -20,7 +20,7 @@
 
 .user-info,
 .user-important {
-  padding: 0 10%;
+  padding: 0 0 0 10%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@
 
 .user-important {
   @include tablet {
-    padding: 0 10%;
+    padding: 0 0 0 10%;
     display: flex;
     align-items: center;
     justify-content: center;
