@@ -10,7 +10,7 @@ export class ApiServiceService {
   user!: any;
   users!: object[];
   userRepositories!: any[];
-  repositories!: object[];
+  repositories!: any[];
   singleRepositoy!: object[]
 
   constructor(private http: HttpClient) {}
@@ -57,7 +57,13 @@ export class ApiServiceService {
         })
         .subscribe({
           next: (res: any) => {
-            this.repositories = res.items;
+            let tempStore = []
+            for(let item of res.items){
+              if(item.visibility == 'public'){
+                tempStore.push(item)
+              }
+            }
+            this.repositories = tempStore
             resolve();
           },
           error: (error: any) => {
