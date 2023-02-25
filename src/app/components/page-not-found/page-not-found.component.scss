@@ -47,13 +47,13 @@ button {
   font-size: 0.9vw;
   cursor: pointer;
   @include tablet {
-   font-size: 1.9vw;
-   padding: 2% 3%;
+    font-size: 1.9vw;
+    padding: 2% 3%;
   }
   @include mobile {
     margin-top: 5%;
     font-size: 3.1vw;
     padding: 2% 3%;
     font-weight: 500;
-   }
+  }
 }
