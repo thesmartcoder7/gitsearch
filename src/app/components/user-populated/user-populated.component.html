@@ -27,7 +27,6 @@
       <a href="{{ currentUser.url }}" target="blank">
         <button>View full profile</button>
       </a>
-      
     </div>
   </div>
   <div class="user-important">
@@ -59,7 +58,7 @@
             />
           </svg>
           <a href=""></a>
-          {{ repositories[0].name }}
+          {{ repositories[0].name | slice : 0 : 10 }} . . . 
         </p>
       </div>
     </div>
