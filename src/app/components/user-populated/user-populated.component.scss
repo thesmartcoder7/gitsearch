@@ -330,14 +330,17 @@
   }
 }
 
-.repositories .latest .l-repo a,
-.forks .m-forked a {
-  text-decoration: none;
-  color: white;
+.repositories .latest .l-repo,
+.forks .m-forked {
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .repositories .latest svg,
