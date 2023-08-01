@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/classes/user';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-populated',
@@ -13,7 +13,9 @@ export class UserPopulatedComponent implements OnInit {
   currentUser!: User;
   user!: string;
   repositories!: any[];
-  bestRepository: any;
+  mostForked: any;
+  mostStarred!: any;
+  starCount: number = 0;
   totalForks: number = 0;
   constructor(
     private apiCall: ApiServiceService,
@@ -40,15 +42,25 @@ export class UserPopulatedComponent implements OnInit {
     this.apiCall.userRepositoriesSearch(username).then(
       (success) => {
         this.repositories = this.apiCall.userRepositories;
-        this.bestRepository = this.repositories[0];
+        this.mostForked = this.repositories[0];
+        this.mostStarred = this.repositories[0]
         for (let i = 0; i < this.repositories.length; i++) {
           if (
-            this.repositories[i].forks_count > this.bestRepository.forks_count
+            this.repositories[i].forks_count > this.mostForked.forks_count
           ) {
-            this.bestRepository = this.repositories[i];
+            this.mostForked = this.repositories[i];
           }
         }
-        console.log(this.bestRepository);
+        for (let i = 0; i < this.repositories.length; i++) {
+          if (
+            this.repositories[i].stargazers_count
+            > this.mostStarred.stargazers_count
+
+          ) {
+            this.mostStarred = this.repositories[i];
+          }
+        }
+        console.log(this.mostForked);
         for (let i = 0; i < this.repositories.length; i++) {
           this.totalForks += this.repositories[i].forks_count;
         }
@@ -80,7 +92,7 @@ export class UserPopulatedComponent implements OnInit {
     );
   }
 
-  goBack(){
-    this.location.back()
+  goBack() {
+    this.location.back();
   }
 }

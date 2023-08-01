@@ -106,7 +106,7 @@ export class ApiServiceService {
   userRepositoriesSearch(userInput: string) {
     let promise = new Promise<void>((resolve, reject) => {
       return this.http
-        .get<any[]>(`${environment.userSearch}${userInput}/repos`, {
+        .get<any[]>(`${environment.userSearch}${userInput}/repos?per_page=1000`, {
           headers: {
             Authorization: `token ${environment.accessToken}`,
           },
