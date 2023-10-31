@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 import { User } from 'src/app/classes/user';
+import { Repository } from 'src/app/classes/repository';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
@@ -10,6 +12,7 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class RepositoryPopulatedComponent implements OnInit {
   repository!: any;
+  repository$: Observable<any> | undefined;
   repositories!: any[];
   user!: User;
   globalUserReturn!: any[];
@@ -35,9 +38,10 @@ export class RepositoryPopulatedComponent implements OnInit {
               repoName == repository.name
             ) {
               this.repository = repository;
-              console.log(repository);
+              this.repository$ = of(this.repository);
             }
-          }},
+          }
+        },
         (error) => {
           console.log('Repository not found!');
         }

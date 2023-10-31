@@ -131,7 +131,12 @@
       Search and find any user's <br />
       account or repository on GitHub.
     </p>
-    <input #username type="text" placeholder="enter username or repository" />
+    <input
+      #username
+      type="text"
+      placeholder="enter username or repository"
+      autocomplete="true"
+    />
     <div class="buttons">
       <button (click)="globalUserSearch(username.value)">user</button>
       <button (click)="globalRepositorySearch(username.value)">

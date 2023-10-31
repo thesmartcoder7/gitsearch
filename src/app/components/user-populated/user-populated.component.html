@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="user-info">
+  <div class="user-info" *ngIf="currentUser$ | async as currentUser">
     <div class="user-profile">
       <img src="{{ currentUser.image }}" alt="user-profile" />
     </div>
@@ -29,7 +29,7 @@
       </a>
     </div>
   </div>
-  <div class="user-important">
+  <div class="user-important" *ngIf="currentUser$ | async as currentUser">
     <!-- repositories -->
     <div class="repositories">
       <div class="count">
@@ -44,9 +44,9 @@
           {{ currentUser.repos }}
         </p>
       </div>
-      <div class="latest">
+      <div class="latest" *ngIf="mostStarred$ | async as starredObs">
         <h3>
-          <a href="{{ mostStarred.html_url }}" target="blank">most starred</a>
+          <a href="{{ starredObs.html_url }}" target="blank">most starred</a>
         </h3>
         <p class="l-repo">
           <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@
               d="M6 7V4a1 1 0 0 1 1-1h6.414l2 2H21a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3zm0 2H4v10h12v-2H6V9z"
             />
           </svg>
-          <a href="{{ mostStarred.html_url }}" target="blank">
+          <a href="{{ starredObs.html_url }}" target="blank">
             {{ mostStarred.name }}
           </a>
         </p>
@@ -76,7 +76,7 @@
           {{ totalForks }}
         </p>
       </div>
-      <div class="highest">
+      <div class="highest" *ngIf="mostStarred$ | async as starredObs">
         <h3>most forked</h3>
         <p class="m-forked">
           <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
@@ -85,7 +85,7 @@
               d="M6 7V4a1 1 0 0 1 1-1h6.414l2 2H21a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3zm0 2H4v10h12v-2H6V9z"
             />
           </svg>
-          <a href="{{ mostStarred.html_url }}" target="blank">
+          <a href="{{ starredObs.html_url }}" target="blank">
             {{ mostForked.name }}
           </a>
         </p>

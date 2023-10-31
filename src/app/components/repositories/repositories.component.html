@@ -1,7 +1,7 @@
 <div class="user-nav">
   <div class="logo">
-    <p class="logo-link">
-      <img src="{{ currentUser.image }}" alt="user-profile-picture" />
+    <p class="logo-link" *ngIf="currentUser$ | async as userObs">
+      <img src="{{ userObs.image }}" alt="user-profile-picture" />
       <span>@{{ currentUser.login }}</span>
     </p>
   </div>
@@ -44,8 +44,8 @@
   </div>
 </div>
 
-<div class="more">
-  <a href="{{ currentUser.url }}?tab=repositories" target="blank"
+<div class="more" *ngIf="currentUser$ | async as userObs">
+  <a href="{{ userObs.url }}?tab=repositories" target="blank"
     >More Repositories</a
   >
 </div>

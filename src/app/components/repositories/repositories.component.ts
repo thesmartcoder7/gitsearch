@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Repository } from 'src/app/classes/repository';
+import { Observable, of } from 'rxjs';
 import { User } from 'src/app/classes/user';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 
@@ -11,6 +11,7 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class RepositoriesComponent implements OnInit {
   currentUser!: User;
+  currentUser$: Observable<User> | undefined;
   user!: string;
   repositories!: any[];
   filteredRepositories!: any[];
@@ -60,6 +61,8 @@ export class RepositoriesComponent implements OnInit {
           this.apiCall.user.avatar_url,
           this.apiCall.user.public_repos
         );
+
+        this.currentUser$ = of(this.currentUser);
       },
       (error) => {
         alert('User not found');

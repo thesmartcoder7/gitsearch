@@ -1,7 +1,7 @@
 <div class="container">
   <div class="user-info">
-    <div class="user-profile">
-      <img src="{{ repository.owner.avatar_url }}" alt="user-profile" /> 
+    <div class="user-profile" *ngIf="repository$ | async as repObs">
+      <img src="{{ repObs.owner.avatar_url }}" alt="user-profile" /> 
     </div>
     <div class="user-meta">
       <p class="user-handle">@{{ repository.owner.login }}</p>
