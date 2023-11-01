@@ -49,7 +49,7 @@ export class UsersComponent implements OnInit {
         this.isUsers = false;
       },
       (error) => {
-        alert('Please fill in the form as required');
+        alert('Repository not found');
         console.log(error);
       }
     );
@@ -70,7 +70,7 @@ export class UsersComponent implements OnInit {
         this.isSingleRepository = false;
       },
       (error) => {
-        alert('Please fill in the form as required');
+        alert('User not found');
         console.log(error);
       }
     );
