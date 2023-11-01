@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 import { Router } from '@angular/router';
-import { Repository } from 'src/app/classes/repository';
 
 @Component({
   selector: 'app-users',
@@ -40,12 +39,17 @@ export class UsersComponent implements OnInit {
     this.apiCall.globalRepositorySearch(userInput).then(
       (success) => {
         this.globalRepoReturn = this.apiCall.repositories;
-        this.isRepositories = true;
+        if (this.globalRepoReturn.length === 0) {
+          this.isRepositories = false;
+          alert('There are no Repositories found with that title');
+        } else {
+          this.isRepositories = true;
+        }
         this.isSingleRepository = false;
         this.isUsers = false;
       },
       (error) => {
-        alert('Repository not found');
+        alert('Please fill in the form as required');
         console.log(error);
       }
     );
@@ -56,12 +60,17 @@ export class UsersComponent implements OnInit {
     this.apiCall.globalUserSearch(userInput).then(
       (success) => {
         this.globalUserReturn = this.apiCall.users;
-        this.isUsers = true;
+        if (this.globalUserReturn.length === 0) {
+          this.isUsers = false;
+          alert('There are no Users found with that name');
+        } else {
+          this.isUsers = true;
+        }
         this.isRepositories = false;
         this.isSingleRepository = false;
       },
       (error) => {
-        alert('User not found');
+        alert('Please fill in the form as required');
         console.log(error);
       }
     );
